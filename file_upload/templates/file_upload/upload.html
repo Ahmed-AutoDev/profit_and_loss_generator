@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    
+        label {
+            font-weight: bold;
+        }
+    
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    
+    <title>Upload Trial Balance</title>
+</head>
+<body>
+    <h1>Upload Your Trial Balance File</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label for="id_trial_balance_file">{{ form.trial_balance_file.label }}</label>
+            {{ form.trial_balance_file }}
+            <p>{{ form.trial_balance_file.help_text }}</p>
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
+
