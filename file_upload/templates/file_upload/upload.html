@@ -51,6 +51,13 @@
         </div>
         <button type="submit">Upload</button>
     </form>
+
+    {% if errors %}
+        <script>
+            alert("Errors detected:\n\n{{ errors|join:'\n' }}");
+        </script>
+    {% endif %}
+
 </body>
 </html>
 
